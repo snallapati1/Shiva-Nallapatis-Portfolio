@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Shiva Nallapati Portfolio Design System
+   Modern tech aesthetic with slate blues and vibrant teal accents */
+
+@layer base {
+  :root {
+    /* Light Mode - Clean, professional with subtle warmth */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary: Deep slate blue */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Secondary: Soft slate */
+    --secondary: 215 25% 93%;
+    --secondary-foreground: 222 47% 11%;
+    
+    /* Muted backgrounds */
+    --muted: 215 25% 93%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Accent: Vibrant teal/cyan */
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Additional accent shades */
+    --accent-light: 174 72% 56%;
+    --accent-dark: 174 72% 32%;
+    --accent-glow: 174 100% 50%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 174 72% 40%;
+    
+    --radius: 0.75rem;
+    
+    /* Section backgrounds */
+    --section-alt: 210 25% 96%;
+    
+    /* Gradient definitions */
+    --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(215 25% 93%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(188 72% 45%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(174 72% 56%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-glow: 0 0 20px hsl(174 72% 40% / 0.3);
+  }
+
+  .dark {
+    /* Dark Mode - Deep, immersive with glowing accents */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 96%;
+    
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+    
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+    
+    /* Primary: Light slate */
+    --primary: 210 40% 96%;
+    --primary-foreground: 222 47% 11%;
+    
+    /* Secondary: Dark slate */
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 40% 96%;
+    
+    /* Muted */
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 55%;
+    
+    /* Accent: Glowing teal/cyan */
+    --accent: 174 72% 50%;
+    --accent-foreground: 222 47% 5%;
+    
+    /* Additional accent shades */
+    --accent-light: 174 72% 65%;
+    --accent-dark: 174 72% 40%;
+    --accent-glow: 174 100% 60%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 174 72% 50%;
+    
+    /* Section backgrounds */
+    --section-alt: 222 47% 7%;
+    
+    /* Gradient definitions */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 5%) 0%, hsl(222 47% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 50%) 0%, hsl(188 72% 55%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(174 72% 50%) 0%, hsl(174 72% 65%) 100%);
+    
+    /* Shadows - more dramatic in dark mode */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(174 72% 50% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Accent text gradient */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect for accent elements */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Mono font for code/technical elements */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* Animation delays for staggered animations */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
