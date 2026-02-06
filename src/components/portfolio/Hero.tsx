@@ -64,7 +64,7 @@ export function Hero() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://github.com/shiva-nallapati"
+              href="https://github.com/snallapati1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors duration-300"
@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
           <a href="#about" aria-label="Scroll to about section">
             <ArrowDown className="h-6 w-6 text-muted-foreground" />
           </a>
