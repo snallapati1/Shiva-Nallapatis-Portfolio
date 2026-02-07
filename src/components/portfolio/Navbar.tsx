@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ThemeToggle } from './ThemeToggle';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom'; 
+import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -57,13 +57,21 @@ export function Navbar() {
             ))}
             <div className="ml-2"><ThemeToggle /></div>
           </div>
-          {/* ... Rest of your mobile menu button logic ... */}
+
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-muted-foreground hover:text-accent focus:outline-none"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border">
+        <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border animate-in slide-in-from-top-5">
           <div className="section-container py-4 space-y-1">
             {navLinks.map((link) => (
               link.isPageRoute ? (
