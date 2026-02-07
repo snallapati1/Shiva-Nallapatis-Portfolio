@@ -13,13 +13,15 @@ export function Hero() {
 
       <div className="relative z-10 section-container text-center">
         <div className="space-y-4 md:space-y-8">
-          {/* Greeting: Added 'mx-auto' and 'w-fit' */}
+          {/* Greeting */}
           <p className="text-accent font-mono text-sm md:text-base animate-fade-in opacity-0 mx-auto w-fit">
             Hi, my name is
           </p>
 
-          {/* The rest of your name/title code... */}
-          <h1 className="...">Shiva Nallapati</h1>
+          {/* Name */}
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight animate-fade-in opacity-0 animation-delay-100">
+            Shiva Nallapati
+          </h1>
 
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-muted-foreground animate-fade-in opacity-0 animation-delay-200">
