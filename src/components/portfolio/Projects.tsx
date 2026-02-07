@@ -19,14 +19,14 @@ const projects = [
     period: 'January 2026 - Present',
     description:
       'Orchestrating a Multi-AI Boardroom coordination layer enabling multiple LLMs to collaborate through structured debate and synthesis. Developing role-based AI frameworks for complex decision-making scenarios.',
-    highlights: ['Multi-LLM Coordination', 'AI Frameworks', 'Human-Centered AI'],
+    highlights: ['Multi-LLM Coordination', 'AI Frameworks', 'TypeScript'],
     featured: true,
   },
   {
     title: 'VinylVerse',
     subtitle: 'Team Lead',
     icon: ShoppingCart,
-    period: 'August 2025 - Present',
+    period: 'August 2025 - December 2025',
     description:
       'Architected a full-stack microservices architecture on AWS, featuring RESTful microservices for Inventory and Order Processing using Lambda, API Gateway, and RDS integrated with a React frontend via AWS Amplify.',
     highlights: ['AWS', 'Microservices', 'React', 'EventBridge', 'CI/CD'],
@@ -55,7 +55,7 @@ export function Projects() {
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects I've worked on, from NASA mission concepts to AI-powered platforms
+            Some projects I'm proud to be able to share!
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { Code, Server, Cloud, Shield, Wrench } from 'lucide-react';
+import { Code, Server, Cloud, Shield, Wrench, Brain } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -9,12 +9,12 @@ const skillCategories = [
   {
     title: 'Frameworks & Libraries',
     icon: Server,
-    skills: ['Node.js', 'Express', 'Vue', 'React', 'Ruby on Rails', 'PHP Laravel'],
+    skills: ['Node.js', 'Express', 'Vue', 'React', 'Ruby on Rails', 'PHP Laravel', 'FastAPI'],
   },
   {
     title: 'Cloud & DevOps',
     icon: Cloud,
-    skills: ['AWS (Lambda, RDS, Amplify, API Gateway, EventBridge, SNS)', 'CI/CD', 'Git'],
+    skills: ['AWS (Lambda, RDS, Amplify, API Gateway, EventBridge, SNS)', 'CI/CD', 'Git', 'Docker', 'Kubernetes'],
   },
   {
     title: 'Security & Auth',
@@ -25,6 +25,11 @@ const skillCategories = [
     title: 'Tools & Other',
     icon: Wrench,
     skills: ['WordPress', 'Siemens NX', 'MatLab', 'Arduino'],
+  },
+  {
+    title: 'AI & Machine Learning',
+    icon: Brain, 
+    skills: ['Python', 'Scikit-Learn', 'Pandas', 'Spotify API integration', 'Matplotlib'],
   },
 ];
 
@@ -83,14 +88,12 @@ export function Skills() {
               <h4 className="font-semibold text-foreground mb-2">Theta Tau</h4>
               <p className="text-accent text-sm mb-2">Professional Engineering Fraternity</p>
               <p className="text-muted-foreground text-sm">
-                Intramural Chair + Fundraising Chair (Jan 2024 – Present)
               </p>
             </div>
             <div className="bg-card rounded-xl p-6 border border-border text-center">
               <h4 className="font-semibold text-foreground mb-2">Kappa Theta Pi</h4>
               <p className="text-accent text-sm mb-2">Professional Technology Fraternity</p>
               <p className="text-muted-foreground text-sm">
-                Active Member, multiple cohorts (Jan 2025 – Present)
               </p>
             </div>
           </div>

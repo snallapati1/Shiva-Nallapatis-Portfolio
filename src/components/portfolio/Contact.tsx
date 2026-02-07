@@ -61,7 +61,7 @@ export function Contact() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/shiva-nallapati"
+              href="https://github.com/snallapati1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-card rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition-all duration-300"

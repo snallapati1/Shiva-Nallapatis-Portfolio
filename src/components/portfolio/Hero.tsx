@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-140px)] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[var(--gradient-hero)]" />
       
@@ -40,7 +40,7 @@ export function Hero() {
               size="lg"
               className="bg-accent text-accent-foreground hover:bg-accent-dark transition-all duration-300 glow"
             >
-              <a href="#projects">View My Work</a>
+              <a href="projects">View My Work</a>
             </Button>
             <Button
               asChild
