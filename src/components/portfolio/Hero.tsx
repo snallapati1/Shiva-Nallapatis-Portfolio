@@ -12,7 +12,7 @@ export function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-200" />
 
       <div className="relative z-10 section-container text-center">
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-4 md:space-y-8">
           {/* Greeting */}
           <p className="text-accent font-mono text-sm md:text-base animate-fade-in opacity-0">
             Hi, my name is
