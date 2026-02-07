@@ -1,12 +1,7 @@
-// api/spotify.ts (at the project root)
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
-
-  if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET || !SPOTIFY_REFRESH_TOKEN) {
-    return res.status(500).json({ error: "Missing environment variables" });
-  }
 
   try {
     const basic = Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64');
@@ -15,46 +10,49 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: { Authorization: `Basic ${basic}`, 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: SPOTIFY_REFRESH_TOKEN }),
+      body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: SPOTIFY_REFRESH_TOKEN || '' }),
     });
+
     const tokenData = await tokenResponse.json();
-    const access_token = tokenData.access_token;
+    
+    if (!tokenResponse.ok) {
+      return res.status(tokenResponse.status).json({ error: "Spotify Token Error", details: tokenData });
+    }
 
-    // 2. Fetch Top 6 Artists
+    // 2. Fetch Top Artists
     const artistsRes = await fetch('https://api.spotify.com/v1/me/top/artists?limit=6&time_range=medium_term', {
-      headers: { Authorization: `Bearer ${access_token}` },
+      headers: { Authorization: `Bearer ${tokenData.access_token}` },
     });
-    const { items: artists } = await artistsRes.json();
 
-    // 3. Get the #1 track for each artist (with safety fallbacks)
+    const artistsData = await artistsRes.json();
+
+    // Defensive check: If 'items' is missing, don't crash, return empty array
+    if (!artistsData || !artistsData.items) {
+      return res.status(200).json({ artists: [], message: "Spotify returned no items. Check app permissions." });
+    }
+
+    // 3. Fetch Top Tracks for each Artist
     const artistData = await Promise.all(
-      artists.map(async (artist: any) => {
+      artistsData.items.map(async (artist: any) => {
         try {
           const topTracksRes = await fetch(`https://api.spotify.com/v1/artists/${artist.id}/top-tracks?market=US`, {
-            headers: { Authorization: `Bearer ${access_token}` },
+            headers: { Authorization: `Bearer ${tokenData.access_token}` },
           });
-          const { tracks } = await topTracksRes.json();
-          
+          const trackData = await topTracksRes.json();
           return {
             name: artist.name,
             imageUrl: artist.images[0]?.url || '',
-            track: tracks[0]?.name || "Artist's Top Song",
-            trackId: tracks[0]?.id || "",
+            track: trackData.tracks?.[0]?.name || "Favorite Track",
+            trackId: trackData.tracks?.[0]?.id || "",
           };
         } catch (e) {
-          return {
-            name: artist.name,
-            imageUrl: artist.images[0]?.url || '',
-            track: "Popular Song",
-            trackId: "",
-          };
+          return { name: artist.name, imageUrl: artist.images[0]?.url || '', track: "", trackId: "" };
         }
       })
     );
 
     return res.status(200).json({ artists: artistData });
   } catch (error: any) {
-    console.error("Vercel Function Error:", error.message);
     return res.status(500).json({ error: error.message });
   }
 }
