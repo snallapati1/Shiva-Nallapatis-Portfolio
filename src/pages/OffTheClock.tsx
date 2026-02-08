@@ -144,7 +144,7 @@ const OffTheClock = () => {
           
           <TeamCarousel 
             name="The Chicago Bulls" 
-            description="I grew up watching Derrick Rose and Jimmy Butler(my all time favorite player) absolutely dominate while on the Bulls."
+            description="I grew up watching Derrick Rose and Jimmy Butler(my all time favorite player) absolutely dominate while on the Bulls. Go ahead and click through some pictures!"
             images={[
               "/sports_images/bullslogo.jpg",
               "/sports_images/young_shiva_bulls.jpeg",
@@ -154,7 +154,7 @@ const OffTheClock = () => {
 
           <TeamCarousel 
             name="The Chicago Bears" 
-            description="I've never been to a game, but Alshon Jeffrey is my favorite NFL player, we haven't been good in a while until this 2025 season, but I'm excited for what's ahead."
+            description="I've never been to a game, but Alshon Jeffrey is my favorite NFL player, we haven't been good in a while until this 2025 season, but I'm excited for what's ahead. Go ahead and click through some pictures!"
             images={[
               "/sports_images/bearslogo.png",
               "/sports_images/alshonjeffrey.jpg"
