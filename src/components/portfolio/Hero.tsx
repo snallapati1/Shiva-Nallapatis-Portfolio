@@ -30,7 +30,7 @@ export function Hero() {
 
           {/* Bio */}
           <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground animate-fade-in opacity-0 animation-delay-300">
-            Senior in Computer Science and Engineering at The Ohio State University, passionate about building .
+            Senior in Computer Science and Engineering at The Ohio State University, passionate about building.
           </p>
 
           {/* CTA Buttons */}

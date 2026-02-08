@@ -14,7 +14,7 @@ export function Contact() {
             <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground text-lg">
               I'm currently looking for new grad SWE positions. Whether you have a question, 
-              want to discuss opportunities, or just want to say hi — my inbox is always open!
+              want to discuss opportunities, or just want to say hi, my inbox is always open!
             </p>
           </div>
 
