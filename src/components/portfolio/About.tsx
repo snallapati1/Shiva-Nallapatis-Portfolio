@@ -28,7 +28,7 @@ export function About() {
             <div className="md:col-span-3 space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Hi! It's nice to meet you! I'm a senior Computer Science student at <span className="text-foreground font-medium">The Ohio State University</span>, 
-                graduating in may of 2026. I'm from Chicago, IL, I love playing sports
+                graduating in May of 2026. I'm from Chicago, IL, I love playing sports
                 and I'm passionate in lots of different fields including neuroscience, space exploration, cooking, and of course software engineering.
                 I've always been curious and wanting to constantly learn new things, which, brought me here!
               </p>
