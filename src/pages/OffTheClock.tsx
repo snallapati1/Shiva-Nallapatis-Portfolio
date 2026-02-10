@@ -90,8 +90,8 @@ const OffTheClock = () => {
           <h1 className="text-6xl font-black tracking-tighter mb-6">OffTheClock.</h1>
           <p className="text-muted-foreground text-lg max-w-4xl leading-relaxed">
             Welcome to the OffTheClock page! This is just a bit about me beyond my professional interests and capacities. Below are my top 6 artists right now, 
-            pulled live from my Spotify account (hopefully you like my music taste). You can click "Listen to Favorite" to get a preview
-          of smy favorite song by each artist. You can also scroll down to see my favorite sports teams!</p>
+            pulled live from my Spotify account (fingers crossed you like my music taste). You can click "Listen to Favorite" to get a preview
+          of my favorite song by each artist. You can also scroll down to see my favorite sports teams!</p>
         </div>
 
         {loading ? (
