@@ -20,6 +20,9 @@ export function About() {
                   src="/HEADSHOT.JPG" 
                   alt="Shiva Nallapati" 
                   className="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover object-top border-2 border-accent/20 glow"
+                  onError={(e) => {
+                    e.currentTarget.src = "/favicon.svg";
+                  }}
                 />
                 <div className="absolute -inset-2 bg-accent/20 rounded-2xl -z-10 blur-xl" />
               </div>
