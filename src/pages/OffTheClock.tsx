@@ -144,7 +144,7 @@ const OffTheClock = () => {
           
           <TeamCarousel 
             name="The Chicago Bulls" 
-            description="I grew up watching Derrick Rose and Jimmy Butler(my all time favorite player) absolutely dominate while on the Bulls. Go ahead and click through some pictures!"
+            description="I grew up watching Derrick Rose and Jimmy Butler (my all time favorite player) absolutely dominate while on the Bulls. Go ahead and click through some pictures!"
             images={[
               "/sports_images/bullslogo.jpg",
               "/sports_images/young_shiva_bulls.jpeg",

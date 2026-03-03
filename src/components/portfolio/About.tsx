@@ -17,9 +17,9 @@ export function About() {
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQGjRrnxgIRHbQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715231524086?e=1772064000&v=beta&t=ZKYHMeQixcWCJFqfm1GbZtZiZmfdHpwGCH3NIkXeOJU" 
+                  src="/HEADSHOT.JPG" 
                   alt="Shiva Nallapati" 
-                  className="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover border-2 border-accent/20 glow"
+                  className="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover object-top border-2 border-accent/20 glow"
                 />
                 <div className="absolute -inset-2 bg-accent/20 rounded-2xl -z-10 blur-xl" />
               </div>
