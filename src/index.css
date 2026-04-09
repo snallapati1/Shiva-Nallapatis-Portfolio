@@ -1,61 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Shiva Nallapati Portfolio Design System
-   Modern tech aesthetic with slate blues and vibrant teal accents */
 
 @layer base {
   :root {
-    /* Light Mode - Clean, professional with subtle warmth */
     --background: 210 20% 98%;
     --foreground: 222 47% 11%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    
-    /* Primary: Deep slate blue */
+
     --primary: 222 47% 11%;
     --primary-foreground: 210 40% 98%;
-    
-    /* Secondary: Soft slate */
+
     --secondary: 215 25% 93%;
     --secondary-foreground: 222 47% 11%;
-    
-    /* Muted backgrounds */
+
     --muted: 215 25% 93%;
     --muted-foreground: 215 16% 47%;
-    
-    /* Accent: Vibrant teal/cyan */
+
     --accent: 174 72% 40%;
     --accent-foreground: 0 0% 100%;
-    
-    /* Additional accent shades */
+
     --accent-light: 174 72% 56%;
     --accent-dark: 174 72% 32%;
     --accent-glow: 174 100% 50%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    
+
     --border: 215 25% 88%;
     --input: 215 25% 88%;
     --ring: 174 72% 40%;
-    
+
     --radius: 0.75rem;
-    
-    /* Section backgrounds */
+
     --section-alt: 210 25% 96%;
-    
-    /* Gradient definitions */
+
     --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(215 25% 93%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(188 72% 45%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(174 72% 56%) 100%);
-    
-    /* Shadows */
+
     --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
@@ -63,53 +52,44 @@
   }
 
   .dark {
-    /* Dark Mode - Deep, immersive with glowing accents */
     --background: 222 47% 5%;
     --foreground: 210 40% 96%;
-    
+
     --card: 222 47% 8%;
     --card-foreground: 210 40% 96%;
-    
+
     --popover: 222 47% 8%;
     --popover-foreground: 210 40% 96%;
-    
-    /* Primary: Light slate */
+
     --primary: 210 40% 96%;
     --primary-foreground: 222 47% 11%;
-    
-    /* Secondary: Dark slate */
+
     --secondary: 222 47% 12%;
     --secondary-foreground: 210 40% 96%;
-    
-    /* Muted */
+
     --muted: 222 47% 12%;
     --muted-foreground: 215 20% 55%;
-    
-    /* Accent: Glowing teal/cyan */
+
     --accent: 174 72% 50%;
     --accent-foreground: 222 47% 5%;
-    
-    /* Additional accent shades */
+
     --accent-light: 174 72% 65%;
     --accent-dark: 174 72% 40%;
     --accent-glow: 174 100% 60%;
-    
+
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
-    
+
     --border: 222 47% 15%;
     --input: 222 47% 15%;
     --ring: 174 72% 50%;
-    
-    /* Section backgrounds */
+
     --section-alt: 222 47% 7%;
-    
-    /* Gradient definitions */
+
     --gradient-hero: linear-gradient(135deg, hsl(222 47% 5%) 0%, hsl(222 47% 8%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(174 72% 50%) 0%, hsl(188 72% 55%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(174 72% 50%) 0%, hsl(174 72% 65%) 100%);
-    
-    /* Shadows - more dramatic in dark mode */
+
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
@@ -131,26 +111,24 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-secondary;
+    @apply bg-transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    @apply bg-accent/30 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+    @apply bg-accent/50;
   }
 }
 
 @layer components {
-  /* Accent text gradient */
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -158,17 +136,14 @@
     background-clip: text;
   }
 
-  /* Glow effect for accent elements */
   .glow {
     box-shadow: var(--shadow-glow);
   }
 
-  /* Section container */
   .section-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Card hover effect */
   .card-hover {
     @apply transition-all duration-300 ease-out;
   }
@@ -178,14 +153,131 @@
     box-shadow: var(--shadow-lg);
   }
 
-  /* Mono font for code/technical elements */
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Dot grid background */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle,
+      hsl(var(--muted-foreground) / 0.25) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.8);
+  }
+
+  /* Status pulse dot */
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(142 72% 50%);
+    animation: status-pulse 2.5s ease-in-out infinite;
+  }
+
+  /* Scroll reveal animations */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(36px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-none {
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Gradient accent line */
+  .accent-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--accent) / 0.6),
+      transparent
+    );
+  }
+
+  /* Gradient border on hover */
+  .grad-border {
+    position: relative;
+  }
+
+  .grad-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent) / 0) 0%,
+      hsl(var(--accent) / 0.4) 50%,
+      hsl(var(--accent) / 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .grad-border:hover::after {
+    opacity: 1;
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+
+  /* Skill tag hover */
+  .skill-tag {
+    @apply px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-lg transition-all duration-200 cursor-default;
+  }
+
+  .skill-tag:hover {
+    @apply bg-accent/10 text-accent;
+    box-shadow: 0 0 12px hsl(var(--accent) / 0.2);
   }
 }
 
 @layer utilities {
-  /* Animation delays for staggered animations */
   .animation-delay-100 {
     animation-delay: 100ms;
   }
@@ -197,5 +289,11 @@
   }
   .animation-delay-400 {
     animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
   }
 }
